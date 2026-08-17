@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeleBirr Loyalty Points System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="telebirr-header">
+            <div class="logo">📱 telebirr</div>
+            <div id="vipBadge" class="vip-badge">🥈 Standard Member</div>
+        </header>
+
+        <!-- User Profile Info -->
+        <div class="user-card">
+            <h2>Welcome Back, <span id="customerName">Abebe</span></h2>
+            <div class="balance-display">
+                <span class="label">Loyalty Points Balance</span>
+                <span id="pointsDisplay" class="value">0</span>
+            </div>
+        </div>
+
+        <!-- Action Controls -->
+        <main class="actions-grid">
+            <!-- Earn Section -->
+            <section class="action-card earn-card">
+                <h3>🛒 Make a Purchase</h3>
+                <p class="hint">Earn 1 Point per 10 ETB spent</p>
+                <div class="input-group">
+                    <input type="number" id="etbAmount" placeholder="Enter ETB Amount" min="1">
+                    <button id="btnEarn">Pay & Earn Points</button>
+                </div>
+            </section>
+
+            <!-- Redeem Section -->
+            <section class="action-card redeem-card">
+                <h3>🎁 Redeem Rewards</h3>
+                <p class="hint">Spend points to buy items</p>
+                <div class="input-group">
+                    <input type="number" id="redeemAmount" placeholder="Enter Points Amount" min="1">
+                    <button id="btnRedeem">Redeem Points</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Status & Error Alert Overlay Box -->
+        <div id="alertBox" class="alert-box hidden"></div>
+
+        <!-- Audit Log Section -->
+        <section class="ledger-section">
+            <h3>📜 Secure Transaction Ledger</h3>
+            <div class="ledger-wrapper">
+                <table class="ledger-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Action Type</th>
+                            <th>Value</th>
+                            <th>Ending Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ledgerBody">
+                        <tr id="emptyRow"><td colspan="4" class="text-center">No transactions recorded yet.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer-stats">
+                Total Money Spent: <span id="totalSpentDisplay">0</span> ETB
+            </div>
+        </section>
+    </div>
+
+    <!-- Injecting the JavaScript connection script directly below the DOM elements -->
+    <script src="loyalty.js"></script>
+</body>
+</html>
