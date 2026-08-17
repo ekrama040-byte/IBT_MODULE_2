@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"] { flex: 2; }
+input[type="number"] { flex: 1; }
+
+button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Base style for individual rows */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+li:hover { background-color: #f9f9f9; }
+
+/* REQUIREMENT: Style the bought state via CSS class */
+li.bought {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #e2f0d9;
+}
+
+.del {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.total-container {
+    margin-top: 20px;
+    text-align: right;
+    border-top: 2px solid #333;
+    padding-top: 10px;
+}
+/* Style for the button container layout */
+.actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* Edit button styling */
+.edit-btn {
+    background-color: #ffc107; /* Amber/Yellow color */
+    color: #212529;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
