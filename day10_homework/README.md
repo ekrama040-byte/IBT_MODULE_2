@@ -1,3 +1,17 @@
-Async JavaScript AssignmentA clean, minimal demonstration of asynchronous JavaScript patterns using async/await, error handling, and parallel execution.File Structuretext├── index.html
-└── app.js
-Use code with caution.Setup & RunningSave index.html and app.js in the same directory.Open index.html directly in any web browser.Open the Browser Developer Tools Console (F12 or Ctrl+Shift+I / Cmd+Option+I) to view log outputs.Core Features DemonstratedTask 1: Fetches currency exchange rates (USD to ETB) safely checking res.ok.Task 2: Modernizes traditional .then() Promise chains into readable sequential code blocks.Task 3: Pinpoints the difference between browser-level connection failures (network errors) and valid HTTP server failure statuses (like 404 Not Found).Task 4: Executes non-dependent network tasks simultaneously using Promise.all to reduce total loading time.Task 5: Implements dynamic UI rendering handling Three-State workflows (Loading, Success Data, and Error Message).Testing UI States (Task 5)Open your browser's Developer Tools, go to the Network tab, and locate the throttling dropdown (usually labeled No Throttling):Loading State: Set throttling to Slow 3G and refresh to see the "Loading…" text.Success State: Keep the network online to watch the placeholder title and description populate.Error State: Change the throttling profile to Offline and refresh to view the red application failure banner.
+# Async JavaScript Assignment
+
+A clean, copy-pasteable implementation demonstrating modern asynchronous patterns, error handling, parallel execution, and lifecycle UI states.
+
+## Setup Instructions
+
+1. Save `index.html` and `app.js` into the same folder.
+2. Open `index.html` in any web browser.
+3. Open your browser console (`F12` -> **Console**) to inspect the background operations.
+
+## Manual Testing (Task 5 UI States)
+
+Open your browser's Developer Tools and switch to the **Network** tab to test all three execution paths:
+
+*   **Loading State:** Set network throttling to **Slow 3G** and reload the page to see the initial persistent state.
+*   **Success State:** Set network back to **No Throttling** (online) to inspect the rendered API payload.
+*   **Error State:** Set network status to **Offline** and reload to watch the global boundary catch and render the application failure banner.
