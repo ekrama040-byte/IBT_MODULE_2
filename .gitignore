@@ -3,10 +3,13 @@
 !day8_homework/**
 !day9_homework/
 !day9_homework/**
+<<<<<<< HEAD
 !day7_assignment/
 !day7_assignment/**
 !miniprojects/
 !miniprojects/**
 !day10_homework/
 !day10_homework/**
+=======
+>>>>>>> 6e1fc9f7993af727dd8b8241775bd94da2981cb5
 !.gitignore
