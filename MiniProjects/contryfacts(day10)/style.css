@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f4f4f4;
+color: #222;
+}
+
+.container {
+width: min(90%, 700px);
+margin: 50px auto;
+text-align: center;
+}
+
+h1 {
+margin-bottom: 30px;
+}
+
+#countryForm {
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+font-weight: bold;
+}
+
+.search-box {
+display: flex;
+gap: 10px;
+justify-content: center;
+}
+
+input {
+flex: 1;
+padding: 12px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 6px;
+}
+
+button {
+padding: 12px 20px;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+font-size: 16px;
+}
+
+button:hover {
+opacity: 0.8;
+}
+
+#status {
+min-height: 24px;
+margin: 20px 0;
+}
+
+.error {
+color: red;
+font-weight: bold;
+}
+
+.country-card {
+background: white;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.country-card h2 {
+margin-top: 0;
+font-size: 30px;
+}
+
+.country-flag {
+width: 200px;
+max-width: 100%;
+margin: 20px auto;
+display: block;
+border-radius: 5px;
+}
+
+.fact {
+display: flex;
+justify-content: space-between;
+gap: 20px;
+padding: 12px 0;
+border-bottom: 1px solid #eee;
+text-align: left;
+}
+
+.fact:last-child {
+border-bottom: none;
+}
+
+.fact strong {
+color: #555;
+}
+.country-card {
+  margin-top: 20px;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+}
+
+.flag {
+  font-size: 100px;
+  margin: 20px;
+}
+
+.error {
+  color: red;
+}
