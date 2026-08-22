@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethiopian Registration Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="header-row">
+            <h2>Sign Up</h2>
+            <button id="theme-toggle" class="theme-btn">🌙 Theme</button>
+        </div>
+
+        <div id="signup-counter" class="counter">0 people have signed up</div>
+
+        <div id="error-area" class="alert alert-error"></div>
+        <div id="success-area" class="alert alert-success"></div>
+
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="username">Full Name</label>
+                <input type="text" id="username" placeholder="e.g. Abebe Bikila">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number (Ethiopian)</label>
+                <input type="tel" id="phone" placeholder="e.g. 0911234567 or +251911234567">
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
