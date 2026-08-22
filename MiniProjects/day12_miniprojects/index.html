@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-900">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CryptoRates - Advanced Data Dashboard</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-full text-slate-100 antialiased flex items-center justify-center p-4 sm:p-6">
+
+    <div class="w-full max-w-lg bg-slate-800 border border-slate-700 rounded-2xl shadow-2xl p-6 sm:p-8 space-y-6">
+
+        <!-- Header -->
+        <div class="flex items-center justify-between border-b border-slate-700 pb-4">
+            <div>
+                <h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                    🪙 CryptoRates
+                </h1>
+
+                <p class="text-sm text-slate-400 mt-0.5">
+                    Base Asset: 1 Bitcoin (BTC)
+                </p>
+            </div>
+
+            <span class="inline-flex items-center rounded-md bg-emerald-500/10 px-2 py-1 text-xs font-medium text-emerald-400 ring-1 ring-inset ring-emerald-500/20">
+                Live Sync
+            </span>
+        </div>
+
+        <!-- Network Status -->
+        <div
+            id="status-area"
+            class="hidden text-sm rounded-lg p-3 font-medium transition-all duration-200">
+        </div>
+
+        <!-- Conversion Form -->
+        <form id="convert-form" class="space-y-4">
+
+            <!-- BTC Amount -->
+            <div>
+                <label
+                    for="amount"
+                    class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5">
+                    BTC Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    step="any"
+                    min="0"
+                    placeholder="e.g. 0.5"
+                    class="w-full bg-slate-900 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none transition-all"
+                >
+            </div>
+
+            <!-- Currency Selector -->
+            <div>
+                <label
+                    for="crypto-select"
+                    class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5">
+                    Target Currency / Token
+                </label>
+
+                <select
+                    id="crypto-select"
+                    class="w-full bg-slate-900 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 rounded-xl px-4 py-3 text-white outline-none transition-all cursor-pointer">
+                </select>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-3 pt-2">
+
+                <button
+                    type="submit"
+                    class="flex-1 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold rounded-xl px-4 py-3 shadow-lg shadow-indigo-600/20 transition-all cursor-pointer">
+                    Convert Amount
+                </button>
+
+                <button
+                    type="button"
+                    id="add-watchlist-btn"
+                    class="bg-slate-700 hover:bg-slate-600 active:bg-slate-700 text-slate-200 font-semibold rounded-xl px-4 py-3 border border-slate-600 transition-all cursor-pointer">
+                    + Watchlist
+                </button>
+
+            </div>
+        </form>
+
+        <!-- Conversion Result -->
+        <div
+            id="result-area"
+            class="text-center font-bold text-lg tracking-wide min-h-[1.75rem] transition-all">
+        </div>
+
+        <!-- Watchlist -->
+        <div class="border-t border-slate-700 pt-4">
+
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">
+                My Token Watchlist
+            </h2>
+
+            <div
+                id="watchlist"
+                class="space-y-2 max-h-48 overflow-y-auto pr-1">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+</html>
