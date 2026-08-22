@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethiopian Registration Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2 id="title-text">Sign Up</h2>
+        <button class="toggle-btn" id="theme-toggle">🌙 Dark Mode</button>
+    </div>
+
+    <div class="counter-badge" id="signup-counter">0 people signed up</div>
+
+    <div class="error-area" id="error-display"></div>
+    <div class="success-area" id="success-display"></div>
+
+    <form id="signup-form">
+        <div class="form-group">
+            <label for="username" id="label-name">Full Name</label>
+            <input type="text" id="username" placeholder="Abebe Bikila">
+        </div>
+        <div class="form-group">
+            <label for="phone" id="label-phone">Phone Number (Ethiopian)</label>
+            <input type="tel" id="phone" placeholder="0911234567 or +251911234567">
+        </div>
+        <button type="submit" class="submit-btn" id="btn-submit">Submit</button>
+    </form>
+</div>
+
+<script src="script.js">
+   
+</script>
+
+</body>
+</html>
