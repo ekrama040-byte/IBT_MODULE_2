@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Day 12 practicing semantic web foundations including secure forms, data tables, accessible web designs, and embedded responsive media containers.">
+    <title>Day 12 Layout: Forms, Data Tables, and Media Layouts</title>
+</head>
+<body>
+
+    <header>
+        <h1>Day 12 Core Foundations Portfolio</h1>
+        <p>A demonstration of semantic HTML, data structure validation, and web accessibility principles.</p>
+    </header>
+
+    <main>
+        
+        <!-- Registration Section -->
+        <section>
+            <h2>1. Ethio Telecom Registration</h2>
+            <!-- Justification: POST secures customer payload inputs away from parameters visibility -->
+            <form action="https://httpbin.org" method="POST">
+                <p>
+                    <label for="masterName">Full Name:</label><br>
+                    <input type="text" id="masterName" name="masterName" required placeholder="Abebe Bikila">
+                </p>
+                <p>
+                    <label for="masterEmail">Email Address:</label><br>
+                    <input type="email" id="masterEmail" name="masterEmail" required placeholder="abebe@domain.et">
+                </p>
+                <p>
+                    <label for="masterPhone">Phone Number:</label><br>
+                    <input type="tel" id="masterPhone" name="masterPhone" required 
+                           pattern="^\+251[79]\d{8}$" 
+                           placeholder="+251911234567" 
+                           title="Please enter a valid phone number starting with +251 followed by 9 digits">
+                </p>
+                <p>
+                    <label for="masterBranch">Preferred Branch:</label><br>
+                    <select id="masterBranch" name="masterBranch" required>
+                        <option value="" disabled selected>-- Choose a Branch --</option>
+                        <option value="bole">Bole Branch</option>
+                        <option value="kazanchis">Kazanchis Branch</option>
+                        <option value="piassa">Piassa Branch</option>
+                    </select>
+                </p>
+                <button type="submit">Submit Registration Details</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Flights Data Section -->
+        <section>
+            <h2>2. Ethiopian Airlines Departures</h2>
+            <table border="1">
+                <caption>Daily Domestic and Regional Flights Schedule</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Flight</th>
+                        <th scope="col">From</th>
+                        <th scope="col">To</th>
+                        <th scope="col">Departs</th>
+                        <th scope="col">Price (ETB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ET 102</td>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Lalibela (LLI)</td>
+                        <td>08:15 AM</td>
+                        <td>4,500 ETB</td>
+                    </tr>
+                    <tr>
+                        <td>ET 204</td>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Gondar (GDQ)</td>
+                        <td>10:30 AM</td>
+                        <td>4,800 ETB</td>
+                    </tr>
+                    <tr>
+                        <td>ET 306</td>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Mekele (MQX)</td>
+                        <td>01:45 PM</td>
+                        <td>5,200 ETB</td>
+                    </tr>
+                    <tr>
+                        <td>ET 412</td>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Dire Dawa (DIR)</td>
+                        <td>04:00 PM</td>
+                        <td>4,100 ETB</td>
+                    </tr>
+                    <tr>
+                        <td>ET 501</td>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Hawassa (AWA)</td>
+                        <td>06:20 PM</td>
+                        <td>3,900 ETB</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- Media Context Blocks Section -->
+        <section>
+            <h2>3. Cultural Visual Showcase</h2>
+            <figure>
+                <img src="https://unsplash.com" alt="A panoramic high-angle view of the medieval rock-hewn Church of Saint George in Lalibela, shaped like a cross" width="550">
+                <figcaption>The spectacular Rock-Hewn Church of Biete Ghiorgis (St. George) in Lalibela, Ethiopia.</figcaption>
+            </figure>
+
+            <h3>Interactive Sub-City Map Context</h3>
+            <iframe 
+                src="https://google.com" 
+                width="550" 
+                height="350" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Interactive Google Map showing the Bole sub-city district in Addis Ababa, Ethiopia">
+            </iframe>
+        </section>
+
+        <hr>
+
+        <!-- Accessible Architecture Conversions Section -->
+        <section>
+            <h2>4. Semantic & Interactive Access Blocks</h2>
+            
+            <!-- Accessible Button Element -->
+            <button type="button">Submit Order</button>
+
+            <!-- Linked Label Input Association Combo -->
+            <p>
+                <label for="masterUsername">Username:</label>
+                <input type="text" id="masterUsername" name="masterUsername">
+            </p>
+
+            <!-- Screen Reader Friendly Image Configuration -->
+            <div>
+                <img src="https://unsplash.com" alt="Traditional Ethiopian injera flatbread served with various colorful wot stews on top" width="250">
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Core Web Development Fundamentals Portfolio Assignment.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Fixes</title>
+</head>
+<body>
+    <main>
+        <h2>Accessible Snippet Conversions</h2>
+
+        <!-- 
+          1. Fixing the <div> Button 
+          Inaccessible: <div onclick="submit()">Click Me</div>
+          Accessible Fix below:
+          Why: A true <button> element is natively focusable using the 'Tab' key, 
+          can be triggered by pressing 'Enter' or 'Spacebar', and announces its 
+          role as a button to screen reader engines automatically.
+        -->
+        <button type="button">Submit Order</button>
+
+        <!-- 
+          2. Fixing the Unlabelled Input
+          Inaccessible: <input type="text">
+          Accessible Fix below:
+          Why: Connecting a <label> to an <input> via the 'for' and 'id' attributes 
+          ensures screen readers read aloud what data is expected when the user focuses 
+          on the input field. It also increases the clickable area for users with mobility issues.
+        -->
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+        </div>
+
+        <!-- 
+          3. Fixing the Image with No Alt
+          Inaccessible: <img src="injera.jpg">
+          Accessible Fix below:
+          Why: Providing a clear 'alt' attribute describes the image content to blind or 
+          visually impaired individuals using text-to-speech screen readers. If the image 
+          fails to load due to a poor network connection, this text shows up in its place.
+        -->
+        <div>
+            <img src="https://unsplash.com" alt="Traditional Ethiopian injera flatbread served with various colorful wot stews on top" width="300">
+        </div>
+    </main>
+</body>
+</html>
