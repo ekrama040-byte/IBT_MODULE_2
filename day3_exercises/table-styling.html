@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 Task 4: Ethiopian Airlines Schedule Styling</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 24px;
+            background-color: #fcfcfc;
+        }
+
+        /* Table Structural Container Architecture */
+        .flight-table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .flight-table caption {
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 12px;
+            color: #333333;
+        }
+
+        /* Header Specific Controls */
+        .flight-table th {
+            background-color: #006633; /* Dark Forest Green */
+            color: #ffffff;
+            font-weight: 600;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Cell Structural Padding Rules */
+        .flight-table th, 
+        .flight-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* Zebra striping alternating index rows selector mapping */
+        .flight-table tbody tr:nth-child(even) {
+            background-color: #f2f9f5; /* Very subtle light green tint tint */
+        }
+
+        /* Hover interaction highlights for better scannability */
+        .flight-table tbody tr:hover {
+            background-color: #e6f4ed;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Task 4: Clean Data Schedules Formatting</h2>
+        
+        <table class="flight-table">
+            <caption>Ethiopian Airlines Domestic Departures Pipeline</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Flight</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Departs</th>
+                    <th scope="col">Price ETB</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ET 102</td>
+                    <td>Addis Ababa (ADD)</td>
+                    <td>Lalibela (LLI)</td>
+                    <td>08:15 AM</td>
+                    <td>4,500 ETB</td>
+                </tr>
+                <tr>
+                    <td>ET 204</td>
+                    <td>Addis Ababa (ADD)</td>
+                    <td>Gondar (GDQ)</td>
+                    <td>10:30 AM</td>
+                    <td>4,800 ETB</td>
+                </tr>
+                <tr>
+                    <td>ET 306</td>
+                    <td>Addis Ababa (ADD)</td>
+                    <td>Mekele (MQX)</td>
+                    <td>01:45 PM</td>
+                    <td>5,200 ETB</td>
+                </tr>
+                <tr>
+                    <td>ET 412</td>
+                    <td>Addis Ababa (ADD)</td>
+                    <td>Dire Dawa (DIR)</td>
+                    <td>04:00 PM</td>
+                    <td>4,100 ETB</td>
+                </tr>
+                <tr>
+                    <td>ET 501</td>
+                    <td>Addis Ababa (ADD)</td>
+                    <td>Hawassa (AWA)</td>
+                    <td>06:20 PM</td>
+                    <td>3,900 ETB</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

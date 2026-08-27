@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 Task 5: Advanced Functional Color Maps</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 24px;
+            background-color: #f7f7f7;
+        }
+
+        .palette-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Base Card Architectural Frames */
+        .color-card {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border: 1px solid #e3e3e3;
+        }
+
+        /* Color Render Presentation Blocks */
+        .color-block {
+            height: 120px;
+            transition: background-color 0.25s ease;
+        }
+
+        .card-info {
+            padding: 16px;
+            font-size: 0.9rem;
+        }
+
+        .card-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        /* Mapping Color Sets Explicitly */
+        
+        /* Green Swatch Blocks */
+        .green-swatch {
+            background-color: hsl(140, 100%, 20%); /* #006622 */
+        }
+        .green-swatch:hover {
+            background-color: hsl(140, 100%, 30%); /* Lightened 10% on hover */
+        }
+
+        /* Yellow Swatch Blocks */
+        .yellow-swatch {
+            background-color: hsl(48, 100%, 50%); /* #FFCC00 */
+        }
+        .yellow-swatch:hover {
+            background-color: hsl(48, 100%, 65%); /* Lightened 15% on hover */
+        }
+
+        /* Red Swatch Blocks */
+        .red-swatch {
+            background-color: hsl(0, 80%, 40%); /* #CC1111 */
+        }
+        .red-swatch:hover {
+            background-color: hsl(0, 80%, 55%); /* Lightened 15% on hover */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Task 5: Mathematical Color Space Conversions Matrix</h2>
+        <p>Hover over each color card block below to see its lightness level increase dynamically via modified HSL parameters.</p>
+
+        <div class="palette-container">
+            <!-- Green Card Block -->
+            <div class="color-card">
+                <div class="color-block green-swatch"></div>
+                <div class="card-info">
+                    <h3>Ethiopian Green</h3>
+                    <p><strong>HEX:</strong> <code>#006622</code></p>
+                    <p><strong>RGB:</strong> <code>rgb(0, 102, 34)</code></p>
+                    <p><strong>HSL:</strong> <code>hsl(140, 100%, 20%)</code></p>
+                </div>
+            </div>
+
+            <!-- Yellow Card Block -->
+            <div class="color-card">
+                <div class="color-block yellow-swatch"></div>
+                <div class="card-info">
+                    <h3>Ethiopian Yellow</h3>
+                    <p><strong>HEX:</strong> <code>#FFCC00</code></p>
+                    <p><strong>RGB:</strong> <code>rgb(255, 204, 0)</code></p>
+                    <p><strong>HSL:</strong> <code>hsl(48, 100%, 50%)</code></p>
+                </div>
+            </div>
+
+            <!-- Red Card Block -->
+            <div class="color-card">
+                <div class="color-block red-swatch"></div>
+                <div class="card-info">
+                    <h3>Ethiopian Red</h3>
+                    <p><strong>HEX:</strong> <code>#CC1111</code></p>
+                    <p><strong>RGB:</strong> <code>rgb(204, 17, 17)</code></p>
+                    <p><strong>HSL:</strong> <code>hsl(0, 80%, 40%)</code></p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

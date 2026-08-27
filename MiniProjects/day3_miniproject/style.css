@@ -1,0 +1,166 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM ROOTS & GLOBAL TOKENS SETTINGS
+   ========================================================================== */
+:root {
+    /* Color Space Conversions: Base Hue at 140 (Ethiopian Forest Green Context) */
+    --brand-hue: 140;
+    --brand-saturation: 60%;
+    
+    /* Functional HSL Palette Mappings */
+    --color-primary: hsl(var(--brand-hue), var(--brand-saturation), 22%);       /* Dark Green Base */
+    --color-primary-hover: hsl(var(--brand-hue), var(--brand-saturation), 32%); /* Exactly 10% Lighter HSL variation */
+    --color-accent: hsl(45, 100%, 50%);                                         /* Rich Gold Tone Map Accent */
+    --color-text-main: hsl(210, 24%, 16%);                                      /* Charcoal Gray readability profile */
+    --color-text-muted: hsl(210, 16%, 46%);                                     /* Mid-gray descriptive context */
+    --color-bg-surface: hsl(0, 0%, 100%);                                       /* Pure White Canvas */
+    --color-bg-page: hsl(210, 20%, 96%);                                        /* Cool structural backdrop tone */
+    --color-border: hsl(210, 14%, 88%);                                         /* Soft grid architectural divider */
+
+    /* Spacing Scale Tokens Layout Systems */
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    /* Architectural Radii Modifiers */
+    --radius-component: 6px;
+    --radius-container: 16px;
+}
+
+/* ==========================================================================
+   2. RESETS & foundational LAYOUT ENGINES
+   ========================================================================== */
+/* Global Box-Sizing Reset System Mapping */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    background-color: var(--color-bg-page);
+    color: var(--color-text-main);
+    line-height: 1.6; /* Generous text leading structural spacing */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Viewport Centering Base wrapper grid */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-lg);
+}
+
+/* ==========================================================================
+   3. PROFILE CARD COMPONENT ARCHITECTURE
+   ========================================================================== */
+.profile-card {
+    background-color: var(--color-bg-surface);
+    width: 100%;
+    max-width: 380px; /* Rigidly locked via border-box constraints */
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-container);
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 
+                0 8px 16px -6px rgba(0, 0, 0, 0.03);
+}
+
+/* Visual Accent Header Block */
+.card-hero {
+    height: 12px;
+    background-color: var(--color-primary);
+    /* Task requirement constraint: Decorative structural accent marker ::before instance */
+    position: relative;
+}
+
+/* Pseudo-element implementation: Gold border ribbon underneath primary canvas headers */
+.card-hero::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-accent);
+}
+
+/* Main inner containment bounds */
+.card-content {
+    padding: var(--space-xl);
+}
+
+/* ==========================================================================
+   4. TYPOGRAPHIC HIERARCHY REGIME
+   ========================================================================== */
+.business-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.5px;
+}
+
+.business-tagline {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    line-height: 1.4;
+}
+
+.business-description {
+    font-size: 0.925rem;
+    color: var(--color-text-main);
+    margin-bottom: var(--space-lg);
+}
+
+/* Location Context Block Mapping featuring a functional badge marker context */
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: hsl(var(--brand-hue), var(--brand-saturation), 95%);
+    padding: 4px var(--space-sm);
+    border-radius: var(--radius-component);
+    margin-bottom: var(--space-xl);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   5. INTERACTIVE BUTTON INTERACTION MODULES
+   ========================================================================== */
+.action-wrapper {
+    display: flex;
+}
+
+.action-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--color-primary);
+    color: var(--color-bg-surface);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: var(--space-md);
+    border-radius: var(--radius-component);
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Interaction Rule Hook: Altering only lightness scale channels via predetermined HSL tokens */
+.action-btn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Focus Ring verification tracking rule for key-navigation accessibility architectures */
+.action-btn:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}

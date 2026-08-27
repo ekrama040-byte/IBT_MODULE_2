@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 Task 2: Box Model Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Shared structural configurations across both demo instances */
+        .card {
+            width: 300px;
+            padding: 24px;
+            border: 2px solid #333333;
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+        }
+
+        /* Instance A: Content-Box behavior */
+        .content-box-card {
+            box-sizing: content-box;
+        }
+
+        /* Instance B: Border-Box behavior */
+        .border-box-card {
+            box-sizing: border-box;
+        }
+
+        code {
+            background-color: #eef;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Task 2: Box Model Calculation Comparison</h2>
+
+        <!-- Card Instance A -->
+        <div class="card content-box-card">
+            <h3>Content-Box Configuration</h3>
+            <p><strong>Rendered Workspace Footprint:</strong> 352px wide</p>
+            <p><code>Math: 300px (Width) + 48px (Left/Right Padding) + 4px (Left/Right Border)</code></p>
+        </div>
+
+        <!-- Card Instance B -->
+        <div class="card border-box-card">
+            <h3>Border-Box Configuration</h3>
+            <p><strong>Rendered Workspace Footprint:</strong> 300px wide</p>
+            <p><code>Math: Explicitly clamps container bounds at exactly 300px. Content space shrinks to 248px.</code></p>
+        </div>
+    </main>
+</body>
+</html>

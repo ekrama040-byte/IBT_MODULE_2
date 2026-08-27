@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 Task 3: CSS Specificity Matrix</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Score Vector Format: [ID, Class/Attribute/Pseudo, Element/Pseudo-element] */
+
+        /* 1. Element Rule (Score: 0, 0, 1) */
+        p {
+            color: red;
+        }
+
+        /* 2. Class Rule (Score: 0, 1, 0) */
+        .highlight-text {
+            color: blue;
+        }
+
+        /* 3. ID Rule (Score: 1, 0, 0) */
+        #unique-paragraph {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Task 3: Specificity Resolution</h2>
+
+        <!-- Targeted element combining all three rules -->
+        <p id="unique-paragraph" class="highlight-text">
+            This paragraph text renders in GREEN.
+        </p>
+
+        <h3>Calculation Analysis Summary</h3>
+        <ul>
+            <li><strong>Winning Selector:</strong> <code>#unique-paragraph</code> wins, coloring the paragraph green.</li>
+            <li><strong>ID Selector Score:</strong> <code>[1, 0, 0]</code> (Highest weight. Wins completely).</li>
+            <li><strong>Class Selector Score:</strong> <code>[0, 1, 0]</code> (Beats standard elements, loses to IDs).</li>
+            <li><strong>Element Selector Score:</strong> <code>[0, 0, 1]</code> (Lowest weight foundational style).</li>
+        </ul>
+    </main>
+</body>
+</html>

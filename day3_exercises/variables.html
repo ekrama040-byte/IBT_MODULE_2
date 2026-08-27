@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 Task 1: CSS Custom Variables</title>
+    <style>
+        /* 1. Global Custom Property Definitions */
+        :root {
+            --primary-color: #006633; /* Ethiopian Green */
+            --accent-color: #FFCC00;  /* Ethiopian Gold */
+            --base-spacing: 16px;
+            --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--main-font);
+            padding: calc(var(--base-spacing) * 2);
+        }
+
+        /* 2. Styled Action Button Component using all 4 custom properties */
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: 2px solid var(--accent-color);
+            padding: var(--base-spacing) calc(var(--base-spacing) * 1.5);
+            font-family: var(--main-font);
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #004d26;
+            transform: translateY(-1px);
+        }
+
+        .cta-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Task 1: CSS Custom Properties Button</h2>
+        <button type="button" class="cta-btn">Book Flight Now</button>
+    </main>
+</body>
+</html>
