@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethio Telecom Service Registration</title>
+</head>
+<body>
+    <main>
+        <h2>Register for Ethio Telecom Premium Service</h2>
+        
+        <!-- 
+          Justification for POST method: 
+          We use POST because this form handles sensitive personal data (Phone, Email). 
+          Unlike GET, POST appends data inside the HTTP request body instead of the URL, 
+          preventing sensitive details from being cached in browser history or server logs.
+        -->
+        <form action="https://httpbin.org" method="POST">
+            <div>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Abebe Bikila">
+            </div>
+
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="abebe@domain.et">
+            </div>
+
+            <div>
+                <label for="phone">Phone Number:</label>
+                <!-- Pattern enforces standard Ethiopian country code +251 followed by 9 digits starting with 7 or 9 -->
+                <input type="tel" id="phone" name="phone" required 
+                       pattern="^\+251[79]\d{8}$" 
+                       placeholder="+251911234567" 
+                       title="Please enter a valid Ethiopian number starting with +251 followed by 9 digits (e.g., +251911234567)">
+            </div>
+
+            <div>
+                <label for="branch">Preferred Branch:</label>
+                <select id="branch" name="branch" required>
+                    <option value="" disabled selected>-- Choose a Branch --</option>
+                    <option value="bole">Bole Branch</option>
+                    <option value="kazanchis">Kazanchis Branch</option>
+                    <option value="piassa">Piassa Branch</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit Registration</button>
+        </form>
+    </main>
+</body>
+</html>
