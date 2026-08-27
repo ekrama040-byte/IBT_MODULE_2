@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14 Task 5: Positioned Overlay Badge Element</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Product Card Wrapper acting as the anchor point */
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            width: 320px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            
+            /* Crucial: Establishes coordinate anchoring bounds for children */
+            position: relative; 
+        }
+
+        /* Absolute positioned element pinned to top right */
+        .sale-badge {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            
+            /* Circular styling geometry rules */
+            width: 64px;
+            height: 64px;
+            background-color: #cc1111; /* Sale Red */
+            color: #ffffff;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            
+            /* Centering text layout within the circle */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            font-size: 0.75rem;
+            font-weight: 700;
+            line-height: 1.1;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .product-title {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.25rem;
+        }
+
+        .price-tag {
+            font-weight: bold;
+            color: #006633;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Product Card Component containing the positioned badge element -->
+    <article class="product-card">
+        <!-- Pinned top right overlay badge -->
+        <div class="sale-badge">
+            <span>ETB</span>
+            <span>SALE</span>
+        </div>
+
+        <h2 class="product-title">Raw Berbere Spice Pot</h2>
+        <p style="margin-bottom: 16px; color:#6c757d;">Authentic, organic spice blend directly from historic marketplace mills.</p>
+        <p class="price-tag">350 ETB</p>
+    </article>
+
+</body>
+</html>

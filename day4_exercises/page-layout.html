@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14 Task 4: Named Grid Template Scaffolding</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Core Application Grid Blueprint */
+        .app-grid {
+            display: grid;
+            min-height: 100vh;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 240px 1fr;
+            
+            /* Map Named Grid Area Architecture layouts explicitly */
+            grid-template-areas: 
+                "header header"
+                "sidebar main"
+                "footer footer";
+            gap: 12px;
+            padding: 12px;
+        }
+
+        /* Assign Elements to specific template areas */
+        .main-header { grid-area: header; background-color: #006633; color: white; padding: 20px; }
+        .side-nav    { grid-area: sidebar; background-color: #ffffff; border: 1px solid #dee2e6; padding: 20px; }
+        .main-feed   { grid-area: main; background-color: #ffffff; border: 1px solid #dee2e6; padding: 20px; }
+        .main-footer { grid-area: footer; background-color: #212529; color: white; padding: 16px; text-align: center; }
+
+        /* Media Query: Changes the layout to a single column under 700px */
+        @media (max-width: 700px) {
+            .app-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto;
+                grid-template-areas: 
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-grid">
+        <header class="main-header">
+            <h1>Habesha Dashboard Admin Panel</h1>
+        </header>
+
+        <aside class="side-nav">
+            <nav aria-label="Secondary Navigation">
+                <p><strong>Navigation Menu</strong></p>
+                <p>Inventory Manager</p>
+                <p>TeleBirr Transactions</p>
+                <p>Order Fulfillment</p>
+            </nav>
+        </aside>
+
+        <main class="main-feed">
+            <h2>Primary Main Interface Workspace Feed</h2>
+            <p>Resize your browser screen below 700px to watch this sidebar slide smoothly into a unified vertical layout column stack arrangement.</p>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 Admin Management Workspace Panel.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

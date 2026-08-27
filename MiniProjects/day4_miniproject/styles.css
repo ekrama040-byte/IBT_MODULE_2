@@ -1,0 +1,289 @@
+/* ==========================================================================
+   1. GLOBAL SYSTEM VARIABLES AND BASE DESIGN TOKENS
+   ========================================================================== */
+:root {
+    /* CBE Identity Design Tones */
+    --cbe-purple: #4A154B;      /* Historic Deep CBE Brand Tone */
+    --cbe-gold: #FFCC00;        /* Secondary Accent Spark */
+    --bg-page: #F3F4F6;         /* Slate base workspace tint */
+    --bg-surface: #FFFFFF;      /* Clean element canvas */
+    --border-color: #E5E7EB;    /* Muted structural divider lines */
+    --text-primary: #1F2937;    /* High contrast charcoal */
+    --text-muted: #6B7280;       /* Informational text grey */
+    
+    /* Global Layout Metrics Scales */
+    --spacing-box: 20px;
+    --radius-box: 8px;
+}
+
+/* ==========================================================================
+   2. STYLES SHEET CORE LAYOUT NORMALIZATION
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   3. PRIMAL BASE SCREEN SKELETON (CSS GRID REGIME)
+   ========================================================================== */
+.dashboard-container {
+    display: grid;
+    min-height: 100vh;
+    /* Two Columns setup: 260px Fixed Navigation Left, Rest fluid on the right */
+    grid-template-columns: 260px 1fr;
+    /* Three Row Layout frames: Header, Dynamic content view space, Fixed footer base */
+    grid-template-rows: 70px 1fr auto;
+    
+    /* Structural Mapping using explicit Grid Template Areas */
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+/* ==========================================================================
+   4. APPOINTED AREA ASSIGNMENTS AND SCROLL RESTRAINTS (STICKY APPARATUS)
+   ========================================================================== */
+.app-header {
+    grid-area: header;
+    background-color: var(--cbe-purple);
+    color: #FFFFFF;
+    padding: 0 var(--spacing-box);
+    
+    /* Requirement Check: Sticky element constraint configuration */
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Stays securely pinned above scrolling layout data planes */
+    
+    /* Flex alignment properties layout for interior components */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--cbe-gold);
+}
+
+.app-sidebar {
+    grid-area: sidebar;
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border-color);
+    padding: var(--spacing-box);
+}
+
+.app-main {
+    grid-area: main;
+    padding: var(--spacing-box);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-box);
+}
+
+.app-footer {
+    grid-area: footer;
+    background-color: #111827;
+    color: #9CA3AF;
+    padding: 16px var(--spacing-box);
+    border-top: 1px solid #374151;
+    font-size: 0.85rem;
+    
+    /* Flex conversion to push notification lines away gracefully */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* ==========================================================================
+   5. MODULAR COMPONENT INTERIOR DESIGNS (FLEXBOX PARAMETERS)
+   ========================================================================== */
+/* Header Component Nav elements configuration */
+.brand-logo {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.header-navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-profile {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #E5E7EB;
+}
+
+.logout-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Sidebar Menu Navigation styling items stack */
+.sidebar-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 12px var(--spacing-box);
+    color: #4B5563;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-menu a:hover, 
+.sidebar-menu a.active {
+    background-color: #F3E8FF;
+    color: var(--cbe-purple);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE COMPONENT GRID (AUTO-FIT MINMAX HOOKS)
+   ========================================================================== */
+.workspace-section h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+}
+
+/* Requirement check: Responsive Card Matrix pipeline layout */
+.metrics-grid {
+    display: grid;
+    /* Grid fluid generation system with zero media queries dependencies */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-box);
+}
+
+/* Individual Data Metric Base Cards containing structural Relative anchors */
+.metric-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    
+    /* Requirement check: Structural Anchor frame context coordinates tracking parameter */
+    position: relative; 
+}
+
+.account-number {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 4px 0 16px 0;
+}
+
+.balance-display {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--cbe-purple);
+}
+
+.currency {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   7. ABSOLUTELY POSITIONED METRIC OVERLAYS TAGGING COMPONENTS
+   ========================================================================== */
+/* Requirement check: Absolute positioned element anchored safely inside its relative box boundary */
+.status-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 0.725rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.live { background-color: #DEF7EC; color: #03543F; }
+.status-badge.active-tag { background-color: #E1EFFE; color: #1E429F; }
+.status-badge.locked { background-color: #FDE8E8; color: #9B1C1C; }
+
+/* Scrolling Data Ledger presentation lists components */
+.table-wrapper {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+    padding: var(--spacing-box);
+}
+
+.placeholder-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.925rem;
+}
+
+.placeholder-row:last-child { border-bottom: none; }
+.placeholder-row .pos { color: #0E9F6E; font-weight: 600; }
+.placeholder-row .neg { color: #E02424; font-weight: 600; }
+
+/* ==========================================================================
+   8. MEDIA QUERIES MONOLITH LAYOUT CONVERSIONS RESPONSIVENESS
+   ========================================================================== */
+/* Requirement check: A single media query that collapses structural components layout grid down to a one column architecture */
+@media (max-width: 750px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        
+        /* Restructures template placement matrix into a uniform column path */
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+    
+    .app-header {
+        flex-direction: column;
+        height: auto;
+        padding: var(--spacing-box);
+        gap: 12px;
+        text-align: center;
+    }
+
+    .header-navbar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .app-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 6px;
+    }
+}

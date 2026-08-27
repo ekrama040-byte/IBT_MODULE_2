@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14 Task 2: Fluid Wrapping Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            background-color: #f1f3f5;
+            padding: 40px 20px;
+        }
+
+        /* Flex Grid Workspace Layout Frame */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows row wrapping when width constraints are hit */
+            gap: 16px;       /* Native flex gaps handle margins cleanly */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .market-card {
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 24px;
+            
+            /* Equal fractional flex growth rule */
+            flex: 1; 
+            
+            /* Safe structural anchor boundary rule */
+            min-width: 250px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .market-card h3 {
+            color: #006633;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="card-container">
+        <div class="market-card">
+            <h3>Card One</h3>
+            <p>Premium Yirgacheffe coffee beans sourced straight from local washing channels.</p>
+        </div>
+        <div class="market-card">
+            <h3>Card Two</h3>
+            <p>Finest teff flour flour grains cultivated under sustainable fair-trade practices.</p>
+        </div>
+        <div class="market-card">
+            <h3>Card Three</h3>
+            <p>Organic honey harvested out of pristine local agricultural regions.</p>
+        </div>
+        <div class="market-card">
+            <h3>Card Four</h3>
+            <p>Hand-woven premium cotton fabrics crafted by generational local artisan weavers.</p>
+        </div>
+    </main>
+
+</body>
+</html>

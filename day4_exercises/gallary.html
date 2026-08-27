@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14 Task 3: Autofitting Fluid Grid Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            background-color: #f1f3f5;
+            padding: 32px 16px;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            
+            /* Responsive Grid configuration without media queries */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-item {
+            background-color: #ffffff;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover; /* Ensures uniform scaling without distortion */
+            display: block;
+        }
+
+        .gallery-item p {
+            padding: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="gallery-container">
+        <div class="gallery-item">
+            <img src="https://unsplash.com" alt="Traditional Ethiopian injera flatbread served with vibrant stews">
+            <p>Traditional Platter</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://unsplash.com" alt="A freshly brewed cup of traditional Ethiopian coffee on a table">
+            <p>Bole Coffee Culture</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://unsplash.com" alt="The medieval rock-hewn Church of Saint George in Lalibela">
+            <p>Lalibela Heritage</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://unsplash.com" alt="Teff farm crops landscape fields inside regional provinces">
+            <p>Teff Grain Cultivation</p>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rebuild of Commercial Bank of Ethiopia (CBE) Online Banking Dashboard layout using CSS Grid and Flexbox.">
+    <title>CBE Birr Online | Customer Dashboard</title>
+    <!-- Importing the clean Google Inter Font System -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main App Container mapped via CSS Grid Areas -->
+    <div class="dashboard-container">
+        
+        <!-- Sticky Header Area -->
+        <header class="app-header">
+            <div class="brand-logo">CBE Birr Online</div>
+            <nav class="header-navbar" aria-label="Utility Links">
+                <span class="user-profile">Abebe Bikila (Premium Account)</span>
+                <a href="#" class="logout-btn">Secure Logout</a>
+            </nav>
+        </header>
+
+        <!-- Sidebar Navigation Panel -->
+        <aside class="app-sidebar">
+            <nav class="sidebar-menu" aria-label="Main Dashboard Navigation">
+                <ul>
+                    <li><a href="#" class="active">Account Overview</a></li>
+                    <li><a href="#">Transfer Funds</a></li>
+                    <li><a href="#">TeleBirr cash-in</a></li>
+                    <li><a href="#">Bill Payments</a></li>
+                    <li><a href="#">E-Statement Downloads</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area containing scrolling card view pipelines -->
+        <main class="app-main">
+            
+            <section class="workspace-section">
+                <h2>Financial Summaries</h2>
+                
+                <!-- Responsive Card Matrix using auto-fit minmax configuration -->
+                <div class="metrics-grid">
+                    
+                    <!-- Card 1: Primary Account Savings with absolute positioned status badge -->
+                    <div class="metric-card">
+                        <span class="status-badge live">Primary</span>
+                        <h3>CBE Savings Account</h3>
+                        <p class="account-number">Acc: •••• 8492</p>
+                        <p class="balance-display">145,250.00 <span class="currency">ETB</span></p>
+                    </div>
+
+                    <!-- Card 2: Current Account with absolute positioned status badge -->
+                    <div class="metric-card">
+                        <span class="status-badge active-tag">Business</span>
+                        <h3>Current/Checking</h3>
+                        <p class="account-number">Acc: •••• 1029</p>
+                        <p class="balance-display">48,900.50 <span class="currency">ETB</span></p>
+                    </div>
+
+                    <!-- Card 3: Fixed Term Investment Vault Card -->
+                    <div class="metric-card">
+                        <span class="status-badge locked">Matured</span>
+                        <h3>Fixed Term Deposit</h3>
+                        <p class="account-number">Acc: •••• 5511</p>
+                        <p class="balance-display">500,000.00 <span class="currency">ETB</span></p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Supplementary long scrolling filler content area to demonstrate Sticky Header behavior -->
+            <section class="workspace-section table-wrapper">
+                <h2>Recent Transactions Ledger</h2>
+                <div class="placeholder-row"><span>Aug 27, 2026</span><span>Transfer to TeleBirr Wallet</span><span class="neg">-5,000 ETB</span></div>
+                <div class="placeholder-row"><span>Aug 25, 2026</span><span>Salary Deposit (CBE Direct)</span><span class="pos">+32,400 ETB</span></div>
+                <div class="placeholder-row"><span>Aug 20, 2026</span><span>Bole Cafe Point of Sale Merchant</span><span class="neg">-420 ETB</span></div>
+                <div class="placeholder-row"><span>Aug 19, 2026</span><span>ATM Cash Withdrawal (Kazanchis)</span><span class="neg">-2,000 ETB</span></div>
+                <div class="placeholder-row"><span>Aug 15, 2026</span><span>Inbound Peer-to-Peer Transfer</span><span class="pos">+1,500 ETB</span></div>
+            </section>
+
+        </main>
+
+        <!-- Dashboard Global Footer Area -->
+        <footer class="app-footer">
+            <p>Commercial Bank of Ethiopia &copy; 2026. Regulated by the National Bank of Ethiopia.</p>
+            <p class="security-note">Secure Session Encryption Active (TLS 1.3)</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
